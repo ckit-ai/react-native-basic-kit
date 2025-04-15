@@ -4,6 +4,13 @@ A powerful and modern React Native starter kit powered by CKIT.ai. This project 
 
 <div align="center">
   <img src="https://img.shields.io/badge/CKIT.ai-Free%20Project-blue" alt="CKIT.ai Free Project" />
+  <img src="https://cursor.sh/brand/logo-dark.svg" alt="Cursor Logo" width="200" />
+  <img src="https://raw.githubusercontent.com/gluestack/gluestack-ui/main/img/gluestack-logo.svg" alt="GlueStack UI Logo" width="200" />
+</div>
+
+<div align="center">
+  <h3>Cursor and Windsorf Ready!</h3>
+  <p>A comprehensive starter kit for building React Native applications with modern AI tooling</p>
 </div>
 
 ## 🛠️ Technologies & Tools
@@ -77,3 +84,104 @@ This project is part of the CKIT.ai free starter kit collection. Feel free to us
 <div align="center">
   <p>Made with ❤️ by CKIT.ai</p>
 </div>
+
+## Features
+
+- 🚀 Expo & React Native for cross-platform mobile development
+- 🎨 GlueStack UI v2 with NativeWind for beautiful and responsive UI
+- 🔐 Authentication flow with context API
+- 🧩 Modular component structure
+- 📱 Responsive design that works on all device sizes
+- 🧭 Expo Router for seamless navigation
+- 🔄 State management with React Context
+- 🛡️ TypeScript for type safety
+
+## 🤖 For AI Assistants
+
+This project includes an [AI.md](./AI.md) file specifically designed for AI assistants. If you're using Cursor, Windsorf, or another AI-powered coding tool, this file provides detailed information about:
+
+- Project architecture and design decisions
+- Component implementation details
+- Common code patterns and examples
+- Troubleshooting tips for common issues
+- GlueStack UI v2 integration patterns
+
+AI assistants should reference this file to better understand how to help with development tasks in this project.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or newer)
+- npm or yarn
+- Expo CLI
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/react-native-basic-kit.git
+
+# Navigate to the project directory
+cd react-native-basic-kit
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+## Project Structure
+
+```
+react-native-basic-kit/
+├── app/                   # Application screens and navigation
+│   ├── (app)/             # Main app screens
+│   ├── (auth)/            # Authentication screens
+│   └── context/           # Context providers
+├── components/            # Reusable components
+│   ├── ui/                # UI components (GlueStack UI)
+│   └── UserMenu.tsx       # User menu component
+├── assets/                # Images, fonts, etc.
+├── constants/             # App constants
+└── hooks/                 # Custom hooks
+```
+
+## Adding UI Components
+
+This project uses GlueStack UI v2. To add a new component:
+
+```bash
+npx gluestack-ui add component-name
+```
+
+## Development Tools
+
+### AI-powered Development
+
+This project is optimized for development with AI-powered code editors:
+
+#### Cursor
+
+[Cursor](https://cursor.sh) is an AI-first code editor that enhances your development experience with:
+
+- AI-powered code completions
+- Smart code navigation
+- Integrated AI chat for solving coding problems
+
+#### Windsorf
+
+Windsorf is another AI-powered development tool that works well with this codebase, offering:
+
+- Intelligent code suggestions
+- Enhanced developer workflows
+- AI-assisted debugging capabilities
+
+### NativeWind
+
+Styling in this project is done with [NativeWind](https://nativewind.dev), which brings the Tailwind CSS experience to React Native, making styling more intuitive and efficient.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
