@@ -4,12 +4,13 @@ A powerful and modern React Native starter kit powered by CKIT.ai. This project 
 
 <div align="center">
   <img src="https://img.shields.io/badge/CKIT.ai-Free%20Project-blue" alt="CKIT.ai Free Project" />
-  <img src="https://cursor.sh/brand/logo-dark.svg" alt="Cursor Logo" width="200" />
+  <img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.44.0/files/dark/cursor.png" alt="Cursor Logo" width="100" />
+  <img src="https://exafunction.github.io/public/images/ides/windsurf-logo.svg" alt="Windsurf Logo" width="100" />
   <img src="https://raw.githubusercontent.com/gluestack/gluestack-ui/main/img/gluestack-logo.svg" alt="GlueStack UI Logo" width="200" />
 </div>
 
 <div align="center">
-  <h3>Cursor and Windsorf Ready!</h3>
+  <h3>Cursor and Windsurf Ready!</h3>
   <p>A comprehensive starter kit for building React Native applications with modern AI tooling</p>
 </div>
 
@@ -98,7 +99,7 @@ This project is part of the CKIT.ai free starter kit collection. Feel free to us
 
 ## 🤖 For AI Assistants
 
-This project includes an [AI.md](./AI.md) file specifically designed for AI assistants. If you're using Cursor, Windsorf, or another AI-powered coding tool, this file provides detailed information about:
+This project includes an [AI.md](./AI.md) file specifically designed for AI assistants. If you're using Cursor, Windsurf, or another AI-powered coding tool, this file provides detailed information about:
 
 - Project architecture and design decisions
 - Component implementation details
@@ -170,9 +171,9 @@ This project is optimized for development with AI-powered code editors:
 - Smart code navigation
 - Integrated AI chat for solving coding problems
 
-#### Windsorf
+#### Windsurf
 
-Windsorf is another AI-powered development tool that works well with this codebase, offering:
+Windsurf is another AI-powered development tool that works well with this codebase, offering:
 
 - Intelligent code suggestions
 - Enhanced developer workflows
