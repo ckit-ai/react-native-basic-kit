@@ -9,7 +9,6 @@ This guide is designed specifically for AI-powered development tools like Cursor
 ## Key Technologies
 - **React Native + Expo**: Cross-platform mobile framework
 - **GlueStack UI v2**: Component library (uses import paths like `@/components/ui/component-name`)
-- **NativeWind**: Tailwind CSS for React Native
 - **Expo Router**: File-based routing system
 - **TypeScript**: Type-safe JavaScript
 
@@ -87,7 +86,7 @@ function Example() {
 
 ## Troubleshooting Tips for AI Assistants
 - If component imports fail, check if the component has been added with `npx gluestack-ui add component-name`
-- For styling issues, use inline styles or style prop with NativeWind classes
+- For styling issues, use inline styles or style prop
 - Authentication issues often relate to the AuthContext implementation
 - Navigation issues may require checking the Expo Router configuration
 

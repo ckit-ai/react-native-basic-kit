@@ -89,7 +89,7 @@ This project is part of the CKIT.ai free starter kit collection. Feel free to us
 ## Features
 
 - 🚀 Expo & React Native for cross-platform mobile development
-- 🎨 GlueStack UI v2 with NativeWind for beautiful and responsive UI
+- 🎨 GlueStack UI v2 for beautiful and responsive UI
 - 🔐 Authentication flow with context API
 - 🧩 Modular component structure
 - 📱 Responsive design that works on all device sizes
@@ -178,10 +178,6 @@ Windsurf is another AI-powered development tool that works well with this codeba
 - Intelligent code suggestions
 - Enhanced developer workflows
 - AI-assisted debugging capabilities
-
-### NativeWind
-
-Styling in this project is done with [NativeWind](https://nativewind.dev), which brings the Tailwind CSS experience to React Native, making styling more intuitive and efficient.
 
 ## License
 
