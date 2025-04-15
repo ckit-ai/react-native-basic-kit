@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
-import { Menu, MenuItem, MenuItemLabel } from '@gluestack-ui/themed';
+import { Menu, MenuItem, MenuItemLabel } from "@/components/ui/menu";
 import { useRouter } from 'expo-router';
-import { Avatar, AvatarFallbackText, AvatarImage } from '@gluestack-ui/themed';
+import { Avatar, AvatarFallbackText, AvatarImage } from "@/components/ui/avatar";
 import { useAuth } from '../app/context/AuthContext';
 
 export const UserMenu = () => {

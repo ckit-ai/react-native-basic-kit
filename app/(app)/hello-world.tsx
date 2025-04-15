@@ -1,14 +1,13 @@
 import React from 'react';
+import { View } from 'react-native';
 import { router } from 'expo-router';
-import {
-  Box,
-  Button,
-  ButtonText,
-  Center,
-  Heading,
-  Text,
-  VStack,
-} from '@gluestack-ui/themed';
+import { Box } from "@/components/ui/box";
+import { Button } from "@/components/ui/button";
+import { ButtonText } from "@/components/ui/button";
+import { Center } from "@/components/ui/center";
+import { Heading } from "@/components/ui/heading";
+import { Text } from "@/components/ui/text";
+import { VStack } from "@/components/ui/vstack";
 import { useAuth } from '../context/AuthContext';
 
 export default function HelloWorld() {

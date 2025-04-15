@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
 import { Link, router } from 'expo-router';
-import {
-  Box,
-  Button,
-  ButtonText,
-  Center,
-  FormControl,
-  Heading,
-  Input,
-  InputField,
-  VStack,
-  Text,
-  InputIcon,
-  EyeIcon,
-  EyeOffIcon,
-  InputSlot,
-} from '@gluestack-ui/themed';
-import { useAuthStore } from '../services/auth.service';
+import { Box } from "@/components/ui/box";
+import { Button } from "@/components/ui/button";
+import { ButtonText } from "@/components/ui/button";
+import { Center } from "@/components/ui/center";
+import { FormControl } from "@/components/ui/form-control";
+import { Heading } from "@/components/ui/heading";
+import { Input } from "@/components/ui/input";
+import { InputField } from "@/components/ui/input";
+import { VStack } from "@/components/ui/vstack";
+import { Text } from "@/components/ui/text";
+import { InputIcon } from "@/components/ui/input";
+import { Icon, EyeIcon, EyeOffIcon } from "@/components/ui/icon";
+import { InputSlot } from "@/components/ui/input";
+import { useAuth } from '../context/AuthContext';
 
 export default function SignupScreen() {
   const [name, setName] = useState('');
@@ -25,7 +22,7 @@ export default function SignupScreen() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const signup = useAuthStore((state) => state.signup);
+  const { login } = useAuth();
 
   const handleSignup = async () => {
     if (!name || !email || !password) {
@@ -37,12 +34,9 @@ export default function SignupScreen() {
     setError('');
 
     try {
-      const result = await signup(email, password, name);
-      if (result.success) {
-        router.replace('/(app)/hello-world');
-      } else {
-        setError(result.error || 'Signup failed');
-      }
+      // Simulate successful signup and automatic login
+      login();
+      router.replace('/(app)/hello-world');
     } catch (err) {
       setError('An error occurred during signup');
     } finally {
@@ -88,7 +82,10 @@ export default function SignupScreen() {
                 />
                 <InputSlot onPress={() => setShowPassword(!showPassword)}>
                   <InputIcon>
-                    {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                    {showPassword ? 
+                      <Icon as={EyeOffIcon} size="md" /> : 
+                      <Icon as={EyeIcon} size="md" />
+                    }
                   </InputIcon>
                 </InputSlot>
               </Input>

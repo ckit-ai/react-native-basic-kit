@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { Link, router } from 'expo-router';
-import {
-  Box,
-  Button,
-  ButtonText,
-  Center,
-  FormControl,
-  Heading,
-  Input,
-  InputField,
-  VStack,
-  Text,
-  InputIcon,
-  EyeIcon,
-  EyeOffIcon,
-  InputSlot,
-} from '@gluestack-ui/themed';
+import { Box } from "@/components/ui/box";
+import { Button } from "@/components/ui/button";
+import { ButtonText } from "@/components/ui/button";
+import { Center } from "@/components/ui/center";
+import { FormControl } from "@/components/ui/form-control";
+import { Heading } from "@/components/ui/heading";
+import { Input } from "@/components/ui/input";
+import { InputField } from "@/components/ui/input";
+import { VStack } from "@/components/ui/vstack";
+import { Text } from "@/components/ui/text";
+import { InputIcon } from "@/components/ui/input";
+import { Icon, EyeIcon, EyeOffIcon } from "@/components/ui/icon";
+import { InputSlot } from "@/components/ui/input";
 import { useAuth } from '../context/AuthContext';
 
 export default function LoginScreen() {
@@ -75,7 +72,10 @@ export default function LoginScreen() {
                 />
                 <InputSlot onPress={() => setShowPassword(!showPassword)}>
                   <InputIcon>
-                    {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                    {showPassword ? 
+                      <Icon as={EyeOffIcon} size="md" /> : 
+                      <Icon as={EyeIcon} size="md" />
+                    }
                   </InputIcon>
                 </InputSlot>
               </Input>

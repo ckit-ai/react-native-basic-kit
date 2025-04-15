@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { Avatar, AvatarFallbackText, AvatarImage, VStack, Heading } from '@gluestack-ui/themed';
+import { View } from 'react-native';
+import { Avatar, AvatarFallbackText, AvatarImage } from "@/components/ui/avatar";
+import { VStack } from "@/components/ui/vstack";
+import { Heading } from "@/components/ui/heading";
+import { Text } from "@/components/ui/text";
 
 export default function ProfileScreen() {
   return (
     <View style={{ flex: 1, padding: 20 }}>
-      <VStack space="md" alignItems="center" mt={10}>
+      <VStack space="md" style={{ alignItems: 'center', marginTop: 40 }}>
         <Avatar size="2xl">
           <AvatarFallbackText>JD</AvatarFallbackText>
           <AvatarImage
