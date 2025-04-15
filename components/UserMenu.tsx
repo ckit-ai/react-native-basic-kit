@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, TouchableOpacity, Image } from 'react-native';
 import { Menu, MenuItem, MenuItemLabel } from "@/components/ui/menu";
 import { useRouter } from 'expo-router';
@@ -8,10 +8,18 @@ import { useAuth } from '../app/context/AuthContext';
 export const UserMenu = () => {
   const router = useRouter();
   const { logout } = useAuth();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
-  const handleLogout = () => {
-    logout();
-    router.replace('/(auth)/login');
+  const handleLogout = async () => {
+    try {
+      setIsLoggingOut(true);
+      await logout();
+      router.replace('/(auth)/login');
+    } catch (error) {
+      console.error('Logout error:', error);
+    } finally {
+      setIsLoggingOut(false);
+    }
   };
 
   const handleProfile = () => {
@@ -35,7 +43,7 @@ export const UserMenu = () => {
       <Menu
         placement="bottom right"
         trigger={({ ...triggerProps }) => (
-          <TouchableOpacity {...triggerProps}>
+          <TouchableOpacity {...triggerProps} disabled={isLoggingOut}>
             <Avatar size="md">
               <AvatarFallbackText>JD</AvatarFallbackText>
               <AvatarImage
@@ -50,8 +58,8 @@ export const UserMenu = () => {
         <MenuItem onPress={handleProfile}>
           <MenuItemLabel>Profile</MenuItemLabel>
         </MenuItem>
-        <MenuItem onPress={handleLogout}>
-          <MenuItemLabel>Logout</MenuItemLabel>
+        <MenuItem onPress={handleLogout} disabled={isLoggingOut}>
+          <MenuItemLabel>{isLoggingOut ? 'Logging out...' : 'Logout'}</MenuItemLabel>
         </MenuItem>
       </Menu>
     </View>

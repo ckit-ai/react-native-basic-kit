@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Image } from 'react-native';
 import { router } from 'expo-router';
 import { Box } from "@/components/ui/box";
@@ -12,10 +12,18 @@ import { useAuth } from '../context/AuthContext';
 
 export default function HelloWorld() {
   const { logout } = useAuth();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
-  const handleLogout = () => {
-    logout();
-    router.replace('/(auth)/login');
+  const handleLogout = async () => {
+    try {
+      setIsLoggingOut(true);
+      await logout();
+      router.replace('/(auth)/login');
+    } catch (error) {
+      console.error('Logout error:', error);
+    } finally {
+      setIsLoggingOut(false);
+    }
   };
 
   return (
@@ -40,8 +48,9 @@ export default function HelloWorld() {
             onPress={handleLogout}
             variant="outline"
             style={{ marginTop: 16 }}
+            isDisabled={isLoggingOut}
           >
-            <ButtonText>Logout</ButtonText>
+            <ButtonText>{isLoggingOut ? 'Logging out...' : 'Logout'}</ButtonText>
           </Button>
         </VStack>
       </Box>

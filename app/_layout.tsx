@@ -1,11 +1,11 @@
 import "@/global.css";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { useFonts } from 'expo-font';
-import { Slot } from "expo-router";
+import { Slot, SplashScreen as RouterSplashScreen } from "expo-router";
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import {SafeAreaView} from "react-native";
+import {SafeAreaView, ActivityIndicator, View} from "react-native";
 import { AuthProvider } from './context/AuthContext';
 import { UserMenu } from '@/components/UserMenu';
 import { useAuth } from './context/AuthContext';
@@ -14,7 +14,7 @@ import { useAuth } from './context/AuthContext';
 SplashScreen.preventAutoHideAsync();
 
 function RootLayoutNav() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -27,6 +27,15 @@ function RootLayoutNav() {
 
   if (!loaded) {
     return null;
+  }
+
+  // Show loading indicator while checking auth state
+  if (isLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" color="#007AFF" />
+      </View>
+    );
   }
 
   return (

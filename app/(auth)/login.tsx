@@ -34,11 +34,12 @@ export default function LoginScreen() {
     setError('');
 
     try {
-      // Accept any credentials
-      login();
+      // Store user data in AsyncStorage via login function
+      await login({ email, timestamp: new Date().toISOString() });
       router.replace('/(app)/hello-world');
     } catch (err) {
       setError('An error occurred during login');
+      console.error('Login error:', err);
     } finally {
       setIsLoading(false);
     }
