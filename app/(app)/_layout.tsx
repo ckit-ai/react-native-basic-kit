@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { Redirect, Stack } from 'expo-router';
-import { useAuthStore } from '../services/auth.service';
+import { Stack } from 'expo-router';
+import { useAuth } from '../context/AuthContext';
+import { Redirect } from 'expo-router';
 
 export default function AppLayout() {
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    return <Redirect href="/login" />;
+    return <Redirect href="/(auth)/login" />;
   }
 
   return (

@@ -9,14 +9,14 @@ import {
   Text,
   VStack,
 } from '@gluestack-ui/themed';
-import { useAuthStore } from '../services/auth.service';
+import { useAuth } from '../context/AuthContext';
 
 export default function HelloWorld() {
-  const { user, logout } = useAuthStore();
+  const { logout } = useAuth();
 
   const handleLogout = () => {
     logout();
-    router.replace('/login');
+    router.replace('/(auth)/login');
   };
 
   return (
@@ -28,7 +28,7 @@ export default function HelloWorld() {
           </Heading>
           
           <Text style={{ textAlign: 'center', fontSize: 18 }}>
-            Welcome, {user?.name}! You are successfully logged in.
+            Welcome! You are successfully logged in.
           </Text>
 
           <Button

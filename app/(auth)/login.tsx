@@ -16,7 +16,7 @@ import {
   EyeOffIcon,
   InputSlot,
 } from '@gluestack-ui/themed';
-import { useAuthStore } from '../services/auth.service';
+import { useAuth } from '../context/AuthContext';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -24,7 +24,7 @@ export default function LoginScreen() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const login = useAuthStore((state) => state.login);
+  const { login } = useAuth();
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -36,12 +36,9 @@ export default function LoginScreen() {
     setError('');
 
     try {
-      const result = await login(email, password);
-      if (result.success) {
-        router.replace('/(app)/hello-world');
-      } else {
-        setError(result.error || 'Login failed');
-      }
+      // Accept any credentials
+      login();
+      router.replace('/(app)/hello-world');
     } catch (err) {
       setError('An error occurred during login');
     } finally {
