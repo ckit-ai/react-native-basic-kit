@@ -14,9 +14,10 @@ import { InputIcon } from "@/components/ui/input";
 import { Icon, EyeIcon, EyeOffIcon } from "@/components/ui/icon";
 import { InputSlot } from "@/components/ui/input";
 import { useAuth } from '../context/AuthContext';
+import { Image } from 'react-native';
 
 export default function SignupScreen() {
-  const [name, setName] = useState('');
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +26,7 @@ export default function SignupScreen() {
   const { login } = useAuth();
 
   const handleSignup = async () => {
-    if (!name || !email || !password) {
+    if (!fullName || !email || !password) {
       setError('Please fill in all fields');
       return;
     }
@@ -47,7 +48,13 @@ export default function SignupScreen() {
   return (
     <Center style={{ flex: 1, padding: 16 }}>
       <Box style={{ width: '100%', maxWidth: 384 }}>
-        <VStack style={{ gap: 16 }}>
+        <VStack style={{ gap: 16, alignItems: 'center' }}>
+          <Image 
+            source={require('@/assets/logo-t.webp')} 
+            style={{ width: 100, height: 100, marginBottom: 16 }} 
+            resizeMode="contain"
+          />
+          
           <Heading style={{ textAlign: 'center', marginBottom: 16 }}>
             Create Account
           </Heading>
@@ -57,8 +64,8 @@ export default function SignupScreen() {
               <Input>
                 <InputField
                   placeholder="Full Name"
-                  value={name}
-                  onChangeText={setName}
+                  value={fullName}
+                  onChangeText={setFullName}
                   autoCapitalize="words"
                 />
               </Input>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, Image } from 'react-native';
 import { Menu, MenuItem, MenuItemLabel } from "@/components/ui/menu";
 import { useRouter } from 'expo-router';
 import { Avatar, AvatarFallbackText, AvatarImage } from "@/components/ui/avatar";
@@ -18,8 +18,20 @@ export const UserMenu = () => {
     router.push('/profile');
   };
 
+  const goToHome = () => {
+    router.push('/(app)/hello-world');
+  };
+
   return (
-    <View style={{ position: 'absolute', top: 10, right: 10, zIndex: 1000 }}>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, paddingTop: 10, width: '100%', zIndex: 1000 }}>
+      <TouchableOpacity onPress={goToHome}>
+        <Image 
+          source={require('@/assets/logo-t.webp')} 
+          style={{ width: 40, height: 40 }} 
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
+      
       <Menu
         placement="bottom right"
         trigger={({ ...triggerProps }) => (

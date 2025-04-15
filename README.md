@@ -1,9 +1,17 @@
 # React Native Basic Kit 🚀
 
-A powerful and modern React Native starter kit powered by CKIT.ai. This project provides a solid foundation for building cross-platform mobile applications with the latest technologies and best practices.
+<div align="center">
+  <img src="./assets/logo-t.webp" alt="CKIT Logo" height="150" />
+</div>
+
+A powerful and modern React Native starter kit powered by CKIT. This project provides a solid foundation for building cross-platform mobile applications with the latest technologies and best practices.
+
+## What is CKIT?
+
+CKIT is a comprehensive toolkit for building modern mobile applications. It combines the best practices, libraries, and tools to provide a seamless development experience. With CKIT, you can focus on building great features instead of setting up infrastructure.
 
 <div align="center">
-  <img src="https://img.shields.io/badge/CKIT.ai-Free%20Project-blue" alt="CKIT.ai Free Project" height="50" />
+  <img src="https://img.shields.io/badge/CKIT-Free%20Project-blue" alt="CKIT Free Project" height="50" />
   <img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.44.0/files/dark/cursor.png" alt="Cursor Logo" height="50" />
   <img src="https://exafunction.github.io/public/images/ides/windsurf-logo.svg" alt="Windsurf Logo" height="50" />
   <img src="https://framework.gluestack.io/_next/static/media/lightLogo.a26f9e05.svg" alt="GlueStack UI Logo" height="50" />

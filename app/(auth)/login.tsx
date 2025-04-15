@@ -14,6 +14,7 @@ import { InputIcon } from "@/components/ui/input";
 import { Icon, EyeIcon, EyeOffIcon } from "@/components/ui/icon";
 import { InputSlot } from "@/components/ui/input";
 import { useAuth } from '../context/AuthContext';
+import { Image } from 'react-native';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -46,7 +47,13 @@ export default function LoginScreen() {
   return (
     <Center style={{ flex: 1, padding: 16 }}>
       <Box style={{ width: '100%', maxWidth: 384 }}>
-        <VStack style={{ gap: 16 }}>
+        <VStack style={{ gap: 16, alignItems: 'center' }}>
+          <Image 
+            source={require('@/assets/logo-t.webp')} 
+            style={{ width: 100, height: 100, marginBottom: 16 }} 
+            resizeMode="contain"
+          />
+          
           <Heading style={{ textAlign: 'center', marginBottom: 16 }}>
             Welcome Back
           </Heading>

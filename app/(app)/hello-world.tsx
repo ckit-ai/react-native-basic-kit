@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import { router } from 'expo-router';
 import { Box } from "@/components/ui/box";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,12 @@ export default function HelloWorld() {
     <Center style={{ flex: 1, padding: 16 }}>
       <Box style={{ width: '100%', maxWidth: 384 }}>
         <VStack style={{ alignItems: 'center', gap: 16 }}>
+          <Image 
+            source={require('@/assets/logo-t.webp')} 
+            style={{ width: 120, height: 120, marginBottom: 16 }} 
+            resizeMode="contain"
+          />
+          
           <Heading style={{ textAlign: 'center' }}>
             Hello World!
           </Heading>
