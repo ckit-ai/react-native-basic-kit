@@ -11,7 +11,7 @@ import {
 } from '@gluestack-ui/themed';
 import { useAuthStore } from '../services/auth.service';
 
-export default function HomeScreen() {
+export default function HelloWorld() {
   const { user, logout } = useAuthStore();
 
   const handleLogout = () => {
@@ -20,22 +20,21 @@ export default function HomeScreen() {
   };
 
   return (
-    <Center flex={1} p="$4">
-      <Box w="$full" maxW="$96">
-        <VStack space="xl" alignItems="center">
-          <Heading size="2xl" textAlign="center">
-            Welcome, {user?.name}!
+    <Center style={{ flex: 1, padding: 16 }}>
+      <Box style={{ width: '100%', maxWidth: 384 }}>
+        <VStack style={{ alignItems: 'center', gap: 16 }}>
+          <Heading style={{ textAlign: 'center' }}>
+            Hello World!
           </Heading>
           
-          <Text textAlign="center" fontSize="$lg">
-            You have successfully logged in to the application.
+          <Text style={{ textAlign: 'center', fontSize: 18 }}>
+            Welcome, {user?.name}! You are successfully logged in.
           </Text>
 
           <Button
             onPress={handleLogout}
-            size="lg"
             variant="outline"
-            mt="$4"
+            style={{ marginTop: 16 }}
           >
             <ButtonText>Logout</ButtonText>
           </Button>

@@ -4,6 +4,8 @@ import { View, ViewProps } from 'react-native';
 import { OverlayProvider } from '@gluestack-ui/overlay';
 import { ToastProvider } from '@gluestack-ui/toast';
 import { useColorScheme } from 'nativewind';
+import { StyledProvider } from '@gluestack-ui/themed';
+import { config as gluestackConfig } from '@gluestack-ui/config';
 
 export type ModeType = 'light' | 'dark' | 'system';
 
@@ -30,9 +32,11 @@ export function GluestackUIProvider({
         props.style,
       ]}
     >
-      <OverlayProvider>
-        <ToastProvider>{props.children}</ToastProvider>
-      </OverlayProvider>
+      <StyledProvider config={gluestackConfig}>
+        <OverlayProvider>
+          <ToastProvider>{props.children}</ToastProvider>
+        </OverlayProvider>
+      </StyledProvider>
     </View>
   );
 }

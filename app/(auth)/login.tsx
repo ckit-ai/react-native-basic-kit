@@ -38,7 +38,7 @@ export default function LoginScreen() {
     try {
       const result = await login(email, password);
       if (result.success) {
-        router.replace('/(app)');
+        router.replace('/(app)/hello-world');
       } else {
         setError(result.error || 'Login failed');
       }
@@ -50,15 +50,15 @@ export default function LoginScreen() {
   };
 
   return (
-    <Center flex={1} p="$4">
-      <Box w="$full" maxW="$96">
-        <VStack space="xl">
-          <Heading size="2xl" textAlign="center" mb="$4">
+    <Center style={{ flex: 1, padding: 16 }}>
+      <Box style={{ width: '100%', maxWidth: 384 }}>
+        <VStack style={{ gap: 16 }}>
+          <Heading style={{ textAlign: 'center', marginBottom: 16 }}>
             Welcome Back
           </Heading>
 
           <FormControl isInvalid={!!error}>
-            <VStack space="md">
+            <VStack style={{ gap: 12 }}>
               <Input>
                 <InputField
                   placeholder="Email"
@@ -84,7 +84,7 @@ export default function LoginScreen() {
               </Input>
 
               {error ? (
-                <Text color="$red500" fontSize="$sm">
+                <Text style={{ color: 'red', fontSize: 14 }}>
                   {error}
                 </Text>
               ) : null}
@@ -92,18 +92,17 @@ export default function LoginScreen() {
               <Button
                 onPress={handleLogin}
                 isDisabled={isLoading}
-                size="lg"
-                mt="$4"
+                style={{ marginTop: 16 }}
               >
                 <ButtonText>
                   {isLoading ? 'Logging in...' : 'Login'}
                 </ButtonText>
               </Button>
 
-              <Text textAlign="center" mt="$2">
+              <Text style={{ textAlign: 'center', marginTop: 8 }}>
                 Don't have an account?{' '}
                 <Link href="/signup" asChild>
-                  <Text color="$primary500" fontWeight="$bold">
+                  <Text style={{ color: '#007AFF', fontWeight: 'bold' }}>
                     Sign up
                   </Text>
                 </Link>

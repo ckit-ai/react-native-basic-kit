@@ -1,16 +1,12 @@
-import { Box } from "@/components/ui/box";
-import { Text } from "@/components/ui/text";
+import { Redirect } from 'expo-router';
+import { useAuthStore } from './services/auth.service';
 
-function Home() {
-    return (
-        <Box
-            className="bg-primary-500 p-5"
-        >
-            <Text className='text-typography-0'>
-                This is the Box
-            </Text>
-        </Box>
-    );
+export default function Index() {
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+
+  if (!isAuthenticated) {
+    return <Redirect href="/login" />;
+  }
+
+  return <Redirect href="/(app)/hello-world" />;
 }
-
-export default Home;
