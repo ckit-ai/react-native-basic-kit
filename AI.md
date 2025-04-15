@@ -3,8 +3,8 @@
 ## Project Overview
 This is a React Native mobile application starter kit with authentication, user profile, and navigation features. It uses modern React Native patterns and is built with the latest technology stack.
 
-## For Cursor and Windsorf AI Assistants
-This guide is designed specifically for AI-powered development tools like Cursor and Windsorf to better understand the project structure and assist with development.
+## For Cursor and Windsurf AI Assistants
+This guide is designed specifically for AI-powered development tools like Cursor and Windsurf to better understand the project structure and assist with development.
 
 ## Key Technologies
 - **React Native + Expo**: Cross-platform mobile framework

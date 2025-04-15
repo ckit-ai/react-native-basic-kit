@@ -3,10 +3,10 @@
 A powerful and modern React Native starter kit powered by CKIT.ai. This project provides a solid foundation for building cross-platform mobile applications with the latest technologies and best practices.
 
 <div align="center">
-  <img src="https://img.shields.io/badge/CKIT.ai-Free%20Project-blue" alt="CKIT.ai Free Project" />
-  <img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.44.0/files/dark/cursor.png" alt="Cursor Logo" width="100" />
-  <img src="https://exafunction.github.io/public/images/ides/windsurf-logo.svg" alt="Windsurf Logo" width="100" />
-  <img src="https://raw.githubusercontent.com/gluestack/gluestack-ui/main/img/gluestack-logo.svg" alt="GlueStack UI Logo" width="200" />
+  <img src="https://img.shields.io/badge/CKIT.ai-Free%20Project-blue" alt="CKIT.ai Free Project" height="50" />
+  <img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.44.0/files/dark/cursor.png" alt="Cursor Logo" height="50" />
+  <img src="https://exafunction.github.io/public/images/ides/windsurf-logo.svg" alt="Windsurf Logo" height="50" />
+  <img src="https://framework.gluestack.io/_next/static/media/lightLogo.a26f9e05.svg" alt="GlueStack UI Logo" height="50" />
 </div>
 
 <div align="center">
